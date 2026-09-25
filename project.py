@@ -90,6 +90,13 @@ def view_students():
     print("       STUDENT RECORDS       ")
     print("=" * 30)
 
+    for roll_no, info in students.items():
+        
+        name = info['name']
+        marks = info['marks']
+        percentage = info['percentage']
+        grade = info['grade']
+
 
 
 
