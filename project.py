@@ -67,6 +67,17 @@ def add_student():
         print("Error: Student name cannot be empty!\n")
         return
 
+    percentage, subject_marks = calculate_percentage()
+    grade = calculate_grade(percentage)
+    
+    students[roll_no] = {
+        'name': name, 
+        'marks': subject_marks, 
+        'percentage': percentage, 
+        'grade': grade
+    }
+    print(f"Success: Student {name} added successfully!\n")
+
 
 
 
