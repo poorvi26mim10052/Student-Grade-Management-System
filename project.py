@@ -115,6 +115,32 @@ def delete_student():
     else:
         print("Error: Student roll number not found.\n")
 
+def main_menu():
+  
+    while True:
+        print("=== Student Management Menu ===")
+        print("1. Add Student")
+        print("2. View All Students")
+        print("3. Delete Student")
+        print("4. Exit")
+        
+        choice = input("Select an option (1-4): ").replace(" ", "")
+        print()
+        
+        if choice == '1':
+            add_student()
+        elif choice == '2':
+            view_students()
+        elif choice == '3':
+            delete_student()
+        elif choice == '4':
+            print("Exiting system. Goodbye!")
+            break
+        else:
+            print("Invalid choice! Please select an option between 1 and 4.\n")
+
+if __name__ == "__main__":
+    main_menu()
 
 
 
