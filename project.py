@@ -3,10 +3,13 @@ students= {}
 SUBJECTS = ['Math', 'Science', 'English']
 
 def is_valid_marks(marks_str):
-    clean_str = marks_str.replace('.', '', 1)
-    if clean_str.isdigit() and marks_str.count('.') <= 1:
-        return True
-    return False
+   
+    parts = marks_str.split('.')
+   
+    if len(parts) > 2:
+        return False
+    return all (part.isdigit() for part in parts if part)
+
 
 def calculate_percentage():
     subject_marks = {}
@@ -14,9 +17,10 @@ def calculate_percentage():
         while True:
             marks_input = input(f"Enter Marks for {subject} (0-100): ").replace(" ", "")  
 
-            for subject in SUBJECTS:
-                    while True:
-                        marks_input = input(f"Enter Marks for {subject} (0-100): ").replace(" ", "")
+            if not is_valid_marks(marks_input):
+                print("Error: Invalid input. Please enter a valid number.")
+                continue
+            
             marks = float(marks_input)
             if marks < 0 or marks > 100:
                 print("Error: Marks must be between 0 and 100.")
@@ -33,7 +37,7 @@ def calculate_percentage():
 def calculate_grade(percentage):
 
     if percentage >= 90: 
-        return 'A+'
+        return 'S'
     elif percentage >= 80:
         return 'A'
     elif percentage >= 70: 
@@ -44,6 +48,24 @@ def calculate_grade(percentage):
         return 'D'
     else: 
         return 'F'
+
+def add_student():
+    
+    roll_no = input("Enter Roll Number: ").replace(" ", "")
+    
+    if roll_no == "":
+        print("Error: Roll number cannot be empty!\n")
+        return
+        
+    if roll_no in students:
+        print("Error: Student with this roll number already exists!\n")
+        return
+    
+    name = " ".join(input("Enter Student Name: ").split())
+    
+    if name == "":
+        print("Error: Student name cannot be empty!\n")
+        return
 
 
 
