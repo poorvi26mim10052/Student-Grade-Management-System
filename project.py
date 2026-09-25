@@ -1,3 +1,5 @@
+#Project for python essential course  #Student grade management system
+
 students= {}
 
 SUBJECTS = ['Math', 'Science', 'English']
@@ -78,6 +80,15 @@ def add_student():
     }
     print(f"Success: Student {name} added successfully!\n")
 
+def view_students():
+   
+    if not students:
+        print("No student records found.\n")
+        return
+        
+    print("\n" + "=" * 30)
+    print("       STUDENT RECORDS       ")
+    print("=" * 30)
 
 
 
