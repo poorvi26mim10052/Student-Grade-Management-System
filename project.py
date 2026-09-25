@@ -97,6 +97,16 @@ def view_students():
         percentage = info['percentage']
         grade = info['grade']
 
+        formatted_marks = ", ".join(f"{sub}: {score}" for sub, score in marks.items())
+        
+        print(f"Roll No    : {roll_no}")
+        print(f"Name       : {name}")
+        print(f"Marks      : {formatted_marks}")
+        print(f"Percentage : {percentage:.2f}%")
+        print(f"Grade      : {grade}")
+        print("-" * 30)
+    print()
+
 
 
 
