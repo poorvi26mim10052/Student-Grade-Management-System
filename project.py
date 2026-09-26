@@ -1,5 +1,7 @@
 #Project for python essential course  #Student grade management system
 import valid_marks
+import calculate_grade
+import del_student
 students= {}
 
 SUBJECTS = ['Math', 'Science', 'English']
