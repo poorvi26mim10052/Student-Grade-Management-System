@@ -2,6 +2,8 @@
 import valid_marks
 import calculate_grade
 import del_student
+import add_student
+import calculate_percentage
 students= {}
 
 SUBJECTS = ['Math', 'Science', 'English']
