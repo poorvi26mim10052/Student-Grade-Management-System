@@ -1,5 +1,5 @@
 #Project for python essential course  #Student grade management system
-
+import valid_marks
 students= {}
 
 SUBJECTS = ['Math', 'Science', 'English']
