@@ -21,7 +21,7 @@ def calculate_percentage():
     subject_marks = {}
     for subject in SUBJECTS:
         while True:
-            marks_input = input(f"Enter Marks for {subject} (0-100): ").replace(" ", "")  
+            marks_input = input(f"Enter Marks for {subject} (0-100): ").strip() 
 
             if not is_valid_marks(marks_input):
                 print("Error: Invalid input. Please enter a valid number.")
@@ -57,7 +57,7 @@ def calculate_grade(percentage):
 
 def add_student():
     
-    roll_no = input("Enter Roll Number: ").replace(" ", "")
+    roll_no = input("Enter Roll Number: ").strip()
     
     if roll_no == "":
         print("Error: Roll number cannot be empty!\n")
@@ -112,7 +112,7 @@ def view_students():
     print()
 def delete_student():
   
-    roll_no = input("Enter Roll Number to delete: ").replace(" ", "")
+    roll_no = input("Enter Roll Number to delete: ").strip()
     if roll_no in students:
         removed = students.pop(roll_no)
         print(f"Success: Removed student {removed['name']}.\n")
@@ -128,7 +128,7 @@ def main_menu():
         print("3. Delete Student")
         print("4. Exit")
         
-        choice = input("Select an option (1-4): ").replace(" ", "")
+        choice = input("Select an option (1-4): ").strip()
         print()
         
         if choice == '1':
